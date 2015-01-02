@@ -62,6 +62,7 @@ namespace XRpgLibrary
         {
             keyboardState = Keyboard.GetState();
 
+            int a = 1;
             gamePadStates = new GamePadState[Enum.GetValues(typeof(PlayerIndex)).Length];
 
             foreach (PlayerIndex index in Enum.GetValues(typeof(PlayerIndex)))
