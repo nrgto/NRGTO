@@ -30,6 +30,7 @@ namespace WindowsGameTest1
         }
         public override void Update(GameTime gameTime, Rectangle clientBounds)
         {
+            //XXX
             position += direction;
             //位置+速度=新位置
             base.Update(gameTime, clientBounds);
