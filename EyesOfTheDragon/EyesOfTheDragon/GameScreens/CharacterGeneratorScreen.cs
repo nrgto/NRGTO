@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 using XRpgLibrary;
 using XRpgLibrary.Controls;
@@ -20,6 +17,7 @@ using XRpgLibrary.CharacterClasses;
 
 using EyesOfTheDragon.Components;
 using RpgLibrary.SkillClasses;
+using RpgLibrary.WorldClasses;
 
 namespace EyesOfTheDragon.GameScreens
 {
@@ -227,45 +225,63 @@ namespace EyesOfTheDragon.GameScreens
 
         private void CreateWorld()
         {
-            Texture2D tilesetTexture = Game.Content.Load<Texture2D>(@"Tilesets\tileset1");
-            Tileset tileset1 = new Tileset(tilesetTexture, 8, 8, 32, 32);
+            Texture2D tilesetTexture = Game.Content.Load<Texture2D>(@"Tilesets\tilea4");
+            Tileset tileset1 = new Tileset(tilesetTexture, 16, 15, 32, 32);
 
-            tilesetTexture = Game.Content.Load<Texture2D>(@"Tilesets\tileset2");
-            Tileset tileset2 = new Tileset(tilesetTexture, 8, 8, 32, 32);
+            //tilesetTexture = Game.Content.Load<Texture2D>(@"Tilesets\tileset2");
+            //Tileset tileset2 = new Tileset(tilesetTexture, 8, 8, 32, 32);
 
-            MapLayer layer = new MapLayer(100, 100);
+            //MapLayer layer = new MapLayer(100, 100);
 
-            for (int y = 0; y < layer.Height; y++)
+            //for (int y = 0; y < layer.Height; y++)
+            //{
+            //    for (int x = 0; x < layer.Width; x++)
+            //    {
+            //        Tile tile = new Tile(0, 0);
+
+            //        layer.SetTile(x, y, tile);
+            //    }
+            //}
+
+            //MapLayer splatter = new MapLayer(100, 100);
+
+            //Random random = new Random();
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    int x = random.Next(0, 100);
+            //    int y = random.Next(0, 100);
+            //    int index = random.Next(2, 14);
+
+            //    Tile tile = new Tile(index, 0);
+            //    splatter.SetTile(x, y, tile);
+            //}
+
+            //splatter.SetTile(1, 0, new Tile(0, 1));
+            //splatter.SetTile(2, 0, new Tile(2, 1));
+            //splatter.SetTile(3, 0, new Tile(0, 1));
+
+            MapData mapData = Game.Content.Load<MapData>(@"Game\Levels\Maps\Village");
+            TileMap map = null;
+
+            for (int i = 0; i < mapData.Layers.Length; i++)
             {
-                for (int x = 0; x < layer.Width; x++)
-                {
-                    Tile tile = new Tile(0, 0);
+                MapLayer mapLayer;
+                mapLayer = MapLayer.FromMapLayerData(mapData.Layers[i]);
 
-                    layer.SetTile(x, y, tile);
+                if (i == 0)
+                {
+                    map = new TileMap(tileset1, mapLayer);
+                }
+                else
+                {
+                    map.AddLayer(mapLayer);
                 }
             }
 
-            MapLayer splatter = new MapLayer(100, 100);
-
-            Random random = new Random();
-
-            for (int i = 0; i < 100; i++)
-            {
-                int x = random.Next(0, 100);
-                int y = random.Next(0, 100);
-                int index = random.Next(2, 14);
-
-                Tile tile = new Tile(index, 0);
-                splatter.SetTile(x, y, tile);
-            }
-
-            splatter.SetTile(1, 0, new Tile(0, 1));
-            splatter.SetTile(2, 0, new Tile(2, 1));
-            splatter.SetTile(3, 0, new Tile(0, 1));
-
-            TileMap map = new TileMap(tileset1, layer);
-            map.AddTileset(tileset2);
-            map.AddLayer(splatter);
+            
+            //map.AddTileset(tileset2);
+            
 
             Level level = new Level(map);
 

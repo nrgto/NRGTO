@@ -15,6 +15,7 @@ Content\PlayerSprites\malewizard.xnb
 Content\GUI\listBoxImage.xnb
 Content\ObjectSprites\containers.xnb
 Content\ObjectSprites\itemimages.xnb
+Content\Tilesets\tilea4.xnb
 Content\Fonts\ControlFont.xnb
 Content\Game\Chests\Big Gold Chest.xnb
 Content\Game\Chests\Broken Crate.xnb
@@ -67,3 +68,6 @@ Content\Game\Items\Weapon\Long Sword.xnb
 Content\Game\Items\Weapon\Mace.xnb
 Content\Game\Items\Weapon\Short Sword.xnb
 Content\Game\Items\Weapon\War Axe.xnb
+Content\Game\Levels\Maps\Village.xnb
+Content\Game\Levels\Starting Level.xnb
+Content\Game\Levels\XX.xnb

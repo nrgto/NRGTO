@@ -352,7 +352,13 @@
       <Name>XRpgLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Tilesets\tilea4.png">
+      <Name>tilea4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Game\Items\Weapon\Acolyte Staff.xml">
       <Name>Acolyte Staff</Name>
@@ -416,6 +422,24 @@
     </Compile>
     <Compile Include="Game\Items\Weapon\War Axe.xml">
       <Name>War Axe</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game\Levels\Maps\Village.xml">
+      <Name>Village</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Game\Levels\Starting Level.xml">
+      <Name>Starting Level</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Game\Levels\XX.xml">
+      <Name>XX</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
