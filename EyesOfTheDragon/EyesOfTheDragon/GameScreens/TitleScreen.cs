@@ -19,8 +19,6 @@ namespace EyesOfTheDragon.GameScreens
         Texture2D backgroundImage;
         Texture2D titleImage;
         LinkLabel startLabel;
-        //int titleX1 = 0;
-        //int titleX2 = 0;
         int x = 0;
         int timeSpan = 50;
         int time = 0;
@@ -66,22 +64,6 @@ namespace EyesOfTheDragon.GameScreens
             if (time == timeSpan)
             {
                 time = 0;
-                //titleX1++;
-
-                //if (titleX1 > 640)
-                //{
-                //    titleX1 = 160;
-                //}
-
-                //if(titleX1 > 320)
-                //{
-                //    titleX2 = titleX1 - 160;
-                //}
-                //else
-                //{
-                //    titleX2 = titleX1 + 320;
-                //}
-
                 x++;
                 if(x > 480)
                 {
@@ -98,28 +80,11 @@ namespace EyesOfTheDragon.GameScreens
 
             base.Draw(gameTime);
 
-            //GameRef.SpriteBatch.Draw(
-            //    backgroundImage,
-            //    GameRef.ScreenRectangle,
-            //    Color.White);
-
             GameRef.SpriteBatch.Draw(
                 backgroundImage,
                 GameRef.ScreenRectangle,
                 new Rectangle(x, 0, 640, 480),
                 Color.White);
-
-            //GameRef.SpriteBatch.Draw(
-            //    backgroundImage,
-            //    new Rectangle(0, 0, GameRef.ScreenRectangle.Width / 2, GameRef.ScreenRectangle.Height),
-            //    new Rectangle(titleX1, 0, 320, 480), 
-            //    Color.White);
-
-            //GameRef.SpriteBatch.Draw(
-            //    backgroundImage,
-            //    new Rectangle(GameRef.ScreenRectangle.Width / 2, 0, GameRef.ScreenRectangle.Width / 2, GameRef.ScreenRectangle.Height),
-            //    new Rectangle(titleX2, 0, 320, 480),
-            //    Color.White);
 
             GameRef.SpriteBatch.Draw(
                 titleImage,

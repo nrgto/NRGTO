@@ -129,22 +129,6 @@ namespace EyesOfTheDragon
 
             base.Draw(gameTime);
 
-        //    float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-        //    frameCount++;
-        //    timeSinceLastUpdate += elapsed;
-
-        //    if (timeSinceLastUpdate > updateInterval)
-        //    {
-        //        fps = frameCount / timeSinceLastUpdate;
-        //#if XBOX360
-        //        System.Diagnostics.Debug.WriteLine("FPS: " + fps.ToString());
-        //#else
-        //        this.Window.Title = "FPS: " + fps.ToString();
-        //#endif
-        //        frameCount = 0;
-        //        timeSinceLastUpdate -= updateInterval;
-        //    }
-
         }
     }
 }
