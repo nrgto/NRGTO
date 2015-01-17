@@ -17,7 +17,13 @@ namespace EyesOfTheDragon.GameScreens
         #region Field region
 
         Texture2D backgroundImage;
+        Texture2D titleImage;
         LinkLabel startLabel;
+        //int titleX1 = 0;
+        //int titleX2 = 0;
+        int x = 0;
+        int timeSpan = 50;
+        int time = 0;
 
         #endregion
 
@@ -36,7 +42,8 @@ namespace EyesOfTheDragon.GameScreens
         {
             ContentManager Content = GameRef.Content;
 
-            backgroundImage = Content.Load<Texture2D>(@"Backgrounds\titlescreen");
+            backgroundImage = Content.Load<Texture2D>(@"Backgrounds\titleX");
+            titleImage = Content.Load<Texture2D>(@"Backgrounds\Title");
 
             base.LoadContent();
 
@@ -55,6 +62,33 @@ namespace EyesOfTheDragon.GameScreens
         {
             ControlManager.Update(gameTime, PlayerIndex.One);
 
+            time ++;
+            if (time == timeSpan)
+            {
+                time = 0;
+                //titleX1++;
+
+                //if (titleX1 > 640)
+                //{
+                //    titleX1 = 160;
+                //}
+
+                //if(titleX1 > 320)
+                //{
+                //    titleX2 = titleX1 - 160;
+                //}
+                //else
+                //{
+                //    titleX2 = titleX1 + 320;
+                //}
+
+                x++;
+                if(x > 480)
+                {
+                    x = 0;
+                }
+
+            }
             base.Update(gameTime);
         }
 
@@ -64,9 +98,32 @@ namespace EyesOfTheDragon.GameScreens
 
             base.Draw(gameTime);
 
+            //GameRef.SpriteBatch.Draw(
+            //    backgroundImage,
+            //    GameRef.ScreenRectangle,
+            //    Color.White);
+
             GameRef.SpriteBatch.Draw(
                 backgroundImage,
                 GameRef.ScreenRectangle,
+                new Rectangle(x, 0, 640, 480),
+                Color.White);
+
+            //GameRef.SpriteBatch.Draw(
+            //    backgroundImage,
+            //    new Rectangle(0, 0, GameRef.ScreenRectangle.Width / 2, GameRef.ScreenRectangle.Height),
+            //    new Rectangle(titleX1, 0, 320, 480), 
+            //    Color.White);
+
+            //GameRef.SpriteBatch.Draw(
+            //    backgroundImage,
+            //    new Rectangle(GameRef.ScreenRectangle.Width / 2, 0, GameRef.ScreenRectangle.Width / 2, GameRef.ScreenRectangle.Height),
+            //    new Rectangle(titleX2, 0, 320, 480),
+            //    Color.White);
+
+            GameRef.SpriteBatch.Draw(
+                titleImage,
+                new Rectangle(0, 0, GameRef.ScreenRectangle.Width, GameRef.ScreenRectangle.Height),
                 Color.White);
 
             ControlManager.Draw(GameRef.SpriteBatch);

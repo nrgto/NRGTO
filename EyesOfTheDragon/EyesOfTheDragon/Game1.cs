@@ -41,8 +41,8 @@ namespace EyesOfTheDragon
 
         #region Screen Field Region
 
-        const int screenWidth = 1024;
-        const int screenHeight = 768;
+        const int screenWidth = 640;
+        const int screenHeight = 480;
 
         public readonly Rectangle ScreenRectangle;
 
@@ -129,21 +129,21 @@ namespace EyesOfTheDragon
 
             base.Draw(gameTime);
 
-            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            frameCount++;
-            timeSinceLastUpdate += elapsed;
+        //    float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        //    frameCount++;
+        //    timeSinceLastUpdate += elapsed;
 
-            if (timeSinceLastUpdate > updateInterval)
-            {
-                fps = frameCount / timeSinceLastUpdate;
-        #if XBOX360
-                System.Diagnostics.Debug.WriteLine("FPS: " + fps.ToString());
-        #else
-                this.Window.Title = "FPS: " + fps.ToString();
-        #endif
-                frameCount = 0;
-                timeSinceLastUpdate -= updateInterval;
-            }
+        //    if (timeSinceLastUpdate > updateInterval)
+        //    {
+        //        fps = frameCount / timeSinceLastUpdate;
+        //#if XBOX360
+        //        System.Diagnostics.Debug.WriteLine("FPS: " + fps.ToString());
+        //#else
+        //        this.Window.Title = "FPS: " + fps.ToString();
+        //#endif
+        //        frameCount = 0;
+        //        timeSinceLastUpdate -= updateInterval;
+        //    }
 
         }
     }
