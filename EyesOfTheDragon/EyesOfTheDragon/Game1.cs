@@ -50,11 +50,6 @@ namespace EyesOfTheDragon
 
         #region Frames Per Second Field Region
 
-        private float fps;
-        private float updateInterval = 1.0f;
-        private float timeSinceLastUpdate = 0.0f;
-        private float frameCount = 0;
-
         #endregion
 
         public Game1()

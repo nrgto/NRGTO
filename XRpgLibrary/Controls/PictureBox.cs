@@ -85,8 +85,8 @@ namespace XRpgLibrary.Controls
             destRect = new Rectangle(
                 (int)newPosition.X,
                 (int)newPosition.Y,
-                sourceRect.Width,
-                sourceRect.Height);
+                destRect.Width,
+                destRect.Height);
         }
 
         #endregion

@@ -46,6 +46,16 @@ namespace XRpgLibrary.Controls
                 spriteBatch.DrawString(SpriteFont, Text, Position, selectedColor);
             else
                 spriteBatch.DrawString(SpriteFont, Text, Position, Color);
+                //spriteBatch.DrawString(
+                //    spriteFont, 
+                //    text, 
+                //    Position,
+                //    Color,
+                //    0,
+                //    Vector2.Zero,
+                //    1,
+                //    SpriteEffects.None,
+                //    0);
         }
 
         public override void HandleInput(PlayerIndex playerIndex)

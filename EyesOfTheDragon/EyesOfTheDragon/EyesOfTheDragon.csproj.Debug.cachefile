@@ -17,6 +17,9 @@ Content\ObjectSprites\containers.xnb
 Content\ObjectSprites\itemimages.xnb
 Content\Tilesets\tilea4.xnb
 Content\Backgrounds\titlescreen.xnb
+Content\Backgrounds\Title.xnb
+Content\Backgrounds\titleX.xnb
+Content\GUI\Steel.xnb
 Content\Game\Chests\Big Gold Chest.xnb
 Content\Game\Chests\Broken Crate.xnb
 Content\Game\Chests\Gold Chest.xnb
@@ -71,5 +74,3 @@ Content\Game\Items\Weapon\War Axe.xnb
 Content\Game\Levels\Maps\Village.xnb
 Content\Game\Levels\Starting Level.xnb
 Content\Game\Levels\XX.xnb
-Content\Backgrounds\Title.xnb
-Content\Backgrounds\titleX.xnb
